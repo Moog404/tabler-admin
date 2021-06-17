@@ -9,24 +9,25 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
         <link rel="stylesheet" href="https://unpkg.com/@tabler/core@latest/dist/css/tabler.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/@tabler/core@latest/dist/js/tabler.min.js" defer></script>
+{#        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>#}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </head>
-    <body class="antialiased">
+    <body class="antialiased" {{ stimulus_controller('symfony/ux-swup/swup') }}>
         {% if block('login_body') is defined %}
             {{ block('login_body') }}
         {% else %}
             <div class="wrapper">
                 {% include '/backend/_sidebar.html.twig' %}
                 {% include '/backend/_navbar.html.twig' %}
-                <div class="page-wrapper">
+                <div id="swup" class="page-wrapper">
                     {% block body %}{% endblock %}
                 </div>
             </div>
         {% endif %}
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-        <script src="https://unpkg.com/@tabler/core@latest/dist/js/tabler.min.js"></script>
 
     </body>
 </html>
