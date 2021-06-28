@@ -80,11 +80,11 @@
                                         <span class="dropdown">
                                             <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
                                             <div class="dropdown-menu dropdown-menu-end">
-                                                <a class="dropdown-item" href="{{ path('back_machine_edit', {'id': machine.id}) }}">
-                                                    edit
+                                                <a class="dropdown-item py-0" href="{{ path('back_machine_edit', {'id': machine.id}) }}">
+                                                    <button class="btn btn-ghost-azure">edit</button>
                                                 </a>
-                                                <a class="dropdown-item" href="#">
-                                                    Another action
+                                                <a class="dropdown-item py-0">
+                                                   {{ include('backend/machine/_delete_form.html.twig')}}
                                                 </a>
                                             </div>
                                         </span>
