@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MachineRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Machine
      * @ORM\Column(type="boolean")
      */
     private ?bool $isOnline;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Characteristic::class, mappedBy="machine", orphanRemoval=true, cascade={"persist"})
+     */
+    private $characteristics;
+
+    public function __construct()
+    {
+        $this->characteristics = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,36 @@ class Machine
     public function setIsOnline(bool $isOnline): self
     {
         $this->isOnline = $isOnline;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Characteristic[]
+     */
+    public function getCharacteristics(): Collection
+    {
+        return $this->characteristics;
+    }
+
+    public function addCharacteristic(Characteristic $characteristic): self
+    {
+        if (!$this->characteristics->contains($characteristic)) {
+            $this->characteristics[] = $characteristic;
+            $characteristic->setMachine($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCharacteristic(Characteristic $characteristic): self
+    {
+        if ($this->characteristics->removeElement($characteristic)) {
+            // set the owning side to null (unless already changed)
+            if ($characteristic->getMachine() === $this) {
+                $characteristic->setMachine(null);
+            }
+        }
 
         return $this;
     }

@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Machine;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -27,6 +28,15 @@ class MachineType extends AbstractType
             ->add('isOnline',CheckboxType::class, [
                 'row_attr' => ['class' => 'form-switch'],
                 'label' => 'en ligne',
+                'required' => false,
+            ])
+            ->add('characteristics', CollectionType::class, [
+                'entry_options' => ['label' => false],
+                'entry_type' => CharacteristicType::class,
+                'allow_add'=> true,
+                'allow_delete'=>true,
+                'by_reference' => false,
+                'label' => false,
                 'required' => false,
             ])
         ;
