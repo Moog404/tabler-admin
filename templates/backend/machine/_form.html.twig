@@ -20,37 +20,120 @@
     </div>
     <div class="col-12">
         <div class="card">
-            <div class="card-header bg-muted-lt">
-                <h4 class="card-title">Caractéristiques</h4>
-            </div>
+            {#            <div class="card-header bg-muted-lt">#}
+            {#                <h4 class="card-title">Caractéristiques</h4>#}
+            {#            </div>#}
             <div class="card-body">
-                <div class="col-md-10 js-characteristic-wrapper"
-                     data-prototype="{{ form_widget(form.characteristics.vars.prototype)|e('html_attr') }}"
-                     data-index="{{ form.characteristics|length }}">
-                    {% for characteristicField in form.characteristics %}
-                        <div class="js-characteristic-item mb-4">
-                            {{ form_errors(characteristicField) }}
-                            <div class="mb-3">
-                                {{ form_row(characteristicField.title) }}
-                            </div>
-                            <div class="mb3">
-                                {{ form_row(characteristicField.content) }}
-                            </div>
-                            <div class="text-right">
-                                <a href="#" class="js-remove-characteristic pull-right">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false">
+                            Caractéristiques
+                        </button>
+                    </h2>
+                    <div id="collapse-1" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <div class="col-md-10 js-characteristic-wrapper"
+                                 data-prototype="{{ form_widget(form.characteristics.vars.prototype)|e('html_attr') }}"
+                                 data-index="{{ form.characteristics|length }}">
+                                {% for characteristicField in form.characteristics %}
+                                    <div class="js-characteristic-item mb-4">
+                                        {{ form_errors(characteristicField) }}
+                                        <div class="mb-3">
+                                            {{ form_row(characteristicField.title) }}
+                                        </div>
+                                        <div class="mb3">
+                                            {{ form_row(characteristicField.content) }}
+                                        </div>
+                                        <div class="text-right">
+                                            <a href="#" class="js-remove-characteristic pull-right">
+                                                <button class="btn btn-secondary">
+                                                    supprimer
+                                                </button>
+                                            </a>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                {% endfor %}
+                                <a href="#" class="js-characteristic-add p-3">
                                     <button class="btn btn-secondary">
-                                        supprimer
+                                        ajouter
                                     </button>
                                 </a>
                             </div>
                         </div>
-                        <hr>
-                    {% endfor %}
-                    <a href="#" class="js-characteristic-add p-3">
-                        <button class="btn btn-secondary">
-                            ajouter
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false">
+                            accordion
                         </button>
-                    </a>
+                    </h2>
+                    <div id="collapse-2" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false">
+                            accordion
+                        </button>
+                    </h2>
+                    <div id="collapse-3" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false">
+                            accordion
+                        </button>
+                    </h2>
+                    <div id="collapse-4" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false">
+                            accordion
+                        </button>
+                    </h2>
+                    <div id="collapse-5" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
