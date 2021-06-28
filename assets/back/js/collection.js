@@ -1,5 +1,3 @@
-import 'jquery';
-
 $(document).ready(function() {
     let $wrapper = $('.js-characteristic-wrapper');
     $wrapper.on('click', '.js-remove-characteristic', function(e) {
