@@ -6,84 +6,71 @@
                 <h4 class="card-title">Informations</h4>
             </div>
             <div class="card-body">
-                <div class="mb-3">
-                    {{ form_row(form.isOnline) }}
-                </div>
-                <div class="mb-3">
-                    {{ form_row(form.name) }}
-                </div>
-                <div class="mb-3">
-                    {{ form_row(form.title) }}
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-2">
+                            {{ form_row(form.isOnline) }}
+                        </div>
+                        <div class="mb-2">
+                            {{ form_row(form.name) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_row(form.title) }}
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        {{ form_row(form.content) }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div data-controller="collection-type">
-    </div>
-
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false">
-                            Caractéristiques
-                        </button>
-                    </h2>
-                    <div id="collapse-1" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <div class="col-md-12"
-                                 data-prototype="{{ form_widget(form.characteristics.vars.prototype)|e('html_attr') }}"
-                                 data-index="{{ form.characteristics|length }}">
-                                {% for characteristicField in form.characteristics %}
-                                    {{ form_widget(characteristicField) }}
-                                {% endfor %}
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false">
+                                Caractéristiques
+                            </button>
+                        </h2>
+                        <div id="collapse-1" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="col-md-12"
+                                     data-prototype="{{ form_widget(form.characteristics.vars.prototype)|e('html_attr') }}"
+                                     data-index="{{ form.characteristics|length }}">
+                                    {% for characteristicField in form.characteristics %}
+                                        {{ form_widget(characteristicField) }}
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false">
-                            Caractéristiques 2
-                        </button>
-                    </h2>
-                    <div id="collapse-5" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            <div class="col-md-12"
-                                 data-prototype="{{ form_widget(form.secondCharacteristics.vars.prototype)|e('html_attr') }}"
-                                 data-index="{{ form.secondCharacteristics|length }}">
-                                {% for characteristicField in form.secondCharacteristics %}
-                                    {{ form_widget(characteristicField) }}
-                                {% endfor %}
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false">
+                                Caractéristiques 2
+                            </button>
+                        </h2>
+                        <div id="collapse-5" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="col-md-12"
+                                     data-prototype="{{ form_widget(form.secondCharacteristics.vars.prototype)|e('html_attr') }}"
+                                     data-index="{{ form.secondCharacteristics|length }}">
+                                    {% for characteristicField in form.secondCharacteristics %}
+                                        {{ form_widget(characteristicField) }}
+                                    {% endfor %}
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false">
-                            accordion
-                        </button>
-                    </h2>
-                    <div id="collapse-2" class="accordion-collapse collapse">
-                        <div class="accordion-body">
-                            test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>test <br>
                         </div>
                     </div>
                 </div>

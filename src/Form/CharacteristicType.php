@@ -23,7 +23,7 @@ class CharacteristicType extends AbstractType
             ->add('content',CKEditorType::class, [
                 'label' => 'Description',
                 'label_attr' => ['class' => 'form-label'],
-//                'attr' => [' data-bs-toggle' => 'autosize'],
+                'attr' => [' class' => 'test-ck'],
                 'required' => false,
             ])
         ;

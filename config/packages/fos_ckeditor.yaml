@@ -3,3 +3,14 @@
 twig:
     form_themes:
         - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+
+
+fos_ck_editor:
+    configs:
+        default:
+            format_tags: "p;h2;h3;h4;h5;h6"
+            toolbar: [ [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] ]
+            entities: false
+            htmlEncodeOutput: false
+            auto_inline: false
+            allowedContent: true

@@ -2,7 +2,7 @@
     "controllers": {
         "@symfony/ux-swup": {
             "swup": {
-                "enabled": true,
+                "enabled": false,
                 "fetch": "eager"
             }
         },

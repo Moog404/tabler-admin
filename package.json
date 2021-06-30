@@ -26,6 +26,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "@a2lix/symfony-collection": "^0.4.0",
+        "@ryanmorr/ready": "^1.4.0",
         "jquery": "^3.6.0"
     }
 }
