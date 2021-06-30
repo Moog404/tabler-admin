@@ -30,6 +30,11 @@ class Machine
     private ?string $title;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private ?string $content;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private ?bool $isOnline;
@@ -75,6 +80,19 @@ class Machine
     public function setTitle(?string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(?string $content): self
+    {
+        $this->content = $content;
 
         return $this;
     }

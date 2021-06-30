@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Machine;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -23,6 +24,12 @@ class MachineType extends AbstractType
             ->add('title',TextType::class, [
                 'label' => 'Name',
                 'label_attr' => ['class' => 'form-label'],
+                'required' => false,
+            ])
+            ->add('content',CKEditorType::class, [
+                'label' => 'Description',
+                'label_attr' => ['class' => 'form-label'],
+                'attr' => [' id' => 'machine-ck'],
                 'required' => false,
             ])
             ->add('isOnline',CheckboxType::class, [
