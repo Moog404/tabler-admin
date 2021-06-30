@@ -56,7 +56,7 @@ export default class extends Controller {
                 const entryLabel = collectionElt.getAttribute('data-entry-label') || ''
 
                 const entryAddLink = getButtonElt(
-                    `Add ${entryLabel}`,
+                    `${entryLabel}`, // in template
                     'add',
                     'btn btn-primary mt-2'
                 )
@@ -67,7 +67,7 @@ export default class extends Controller {
                 const entryRemoveLink = getButtonElt(
                     'Remove',
                     'remove',
-                    'btn btn-danger'
+                    'btn btn-danger mt-2'
                 )
 
                 const collectionChildren = [...collectionElt.children]
@@ -105,7 +105,7 @@ export default class extends Controller {
                     const entryRemoveLink = getButtonElt(
                         'Remove',
                         'remove',
-                        'btn btn-danger btn-sm'
+                        'btn btn-danger mt-2'
                     )
                     templateContent.firstChild.appendChild(entryRemoveLink)
                 }

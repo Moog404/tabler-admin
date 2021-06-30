@@ -40,7 +40,9 @@
                             <div class="accordion-body">
                                 <div class="col-md-12"
                                      data-prototype="{{ form_widget(form.characteristics.vars.prototype)|e('html_attr') }}"
-                                     data-index="{{ form.characteristics|length }}">
+                                     data-index="{{ form.characteristics|length }}"
+                                     data-entry-label="Ajouter une caractéristique"
+                                >
                                     {% for characteristicField in form.characteristics %}
                                         {{ form_widget(characteristicField) }}
                                     {% endfor %}
@@ -65,7 +67,9 @@
                             <div class="accordion-body">
                                 <div class="col-md-12"
                                      data-prototype="{{ form_widget(form.secondCharacteristics.vars.prototype)|e('html_attr') }}"
-                                     data-index="{{ form.secondCharacteristics|length }}">
+                                     data-index="{{ form.secondCharacteristics|length }}"
+                                     data-entry-label="ajouter une caractéristique2"
+                                >
                                     {% for characteristicField in form.secondCharacteristics %}
                                         {{ form_widget(characteristicField) }}
                                     {% endfor %}
