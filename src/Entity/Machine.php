@@ -39,9 +39,15 @@ class Machine
      */
     private $characteristics;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Characteristic::class, mappedBy="machine2", orphanRemoval=true, cascade={"persist"})
+     */
+    private $secondCharacteristics;
+
     public function __construct()
     {
         $this->characteristics = new ArrayCollection();
+        $this->secondCharacteristics = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -109,6 +115,36 @@ class Machine
             // set the owning side to null (unless already changed)
             if ($characteristic->getMachine() === $this) {
                 $characteristic->setMachine(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getSecondCharacteristics(): Collection
+    {
+        return $this->secondCharacteristics;
+    }
+
+    public function addSecondCharacteristic(Characteristic $secondCharacteristic): self
+    {
+        if (!$this->secondCharacteristics->contains($secondCharacteristic)) {
+            $this->secondCharacteristics[] = $secondCharacteristic;
+            $secondCharacteristic->setMachine2($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSecondCharacteristic(Characteristic $secondCharacteristic): self
+    {
+        if ($this->secondCharacteristics->removeElement($secondCharacteristic)) {
+            // set the owning side to null (unless already changed)
+            if ($secondCharacteristic->getMachine2() === $this) {
+                $secondCharacteristic->setMachine2(null);
             }
         }
 

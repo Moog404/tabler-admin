@@ -39,6 +39,15 @@ class MachineType extends AbstractType
                 'label' => false,
                 'required' => false,
             ])
+            ->add('secondCharacteristics', CollectionType::class, [
+                'entry_options' => ['label' => false],
+                'entry_type' => CharacteristicType::class,
+                'allow_add'=> true,
+                'allow_delete'=>true,
+                'by_reference' => false,
+                'label' => false,
+                'required' => false,
+            ])
         ;
     }
 

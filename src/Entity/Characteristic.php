@@ -29,9 +29,13 @@ class Characteristic
 
     /**
      * @ORM\ManyToOne(targetEntity=Machine::class, inversedBy="characteristics")
-     * @ORM\JoinColumn(nullable=false)
      */
-    private $machine;
+    private ?Machine $machine;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Machine::class, inversedBy="secondCharacteristics")
+     */
+    private ?Machine $machine2;
 
     public function getId(): ?int
     {
@@ -70,6 +74,18 @@ class Characteristic
     public function setMachine(?Machine $machine): self
     {
         $this->machine = $machine;
+
+        return $this;
+    }
+
+    public function getMachine2(): ?Machine
+    {
+        return $this->machine2;
+    }
+
+    public function setMachine2(?Machine $machine2): self
+    {
+        $this->machine2 = $machine2;
 
         return $this;
     }
