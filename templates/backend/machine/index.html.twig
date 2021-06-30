@@ -2,6 +2,8 @@
 {% block title %}Machine index{% endblock %}
 
 {% block body %}
+    {{ component('alert', { type: 'warning', message: 'Hello Twig Components!' }) }}
+
     <div class="container-xl">
         <!-- Page title -->
         <div class="page-header d-print-none mt-4 mb-4">
