@@ -29,7 +29,7 @@ class MachineType extends AbstractType
             ->add('content',CKEditorType::class, [
                 'label' => 'Description',
                 'label_attr' => ['class' => 'form-label'],
-                'attr' => [' id' => 'machine-ck'],
+                'attr' => ['class' => 'test-ck'],
                 'required' => false,
             ])
             ->add('isOnline',CheckboxType::class, [
